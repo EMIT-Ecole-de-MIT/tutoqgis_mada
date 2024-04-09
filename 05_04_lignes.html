@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+
+<!-- Mirrored from tutoqgis.cnrs.fr/05_04_lignes.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Apr 2024 10:31:48 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Tutoriel QGIS</title>
+	<meta name="description" content="Tutoriel QGIS">
+	<meta name="author" content="Pierson Julie" >
+	<link rel="icon" type="image/x-icon" href="illustrations/icon_letg.png">
+	<link href='https://fonts.bunny.net/css?family=Open+Sans:400,400italic,600,600italic,700,700italic&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="tutoqgis.css" media="screen">
+	<!--<link rel="stylesheet" type="text/css" href="tutoqgis_print.css" media="screen">-->
+</head>
+
+<body>
+<div id="wrap">
+	<div id="menus_horiz">
+
+	<!-- titre -->
+	<div id="header">
+		<a class="grostitre" href="index-2.html">Tutoriel QGIS</a>
+		<span style="float:right">Attention, le tutoriel a déménagé ! Mettez vos marque-pages à jour :-) <br> http://ouvrir.passages.cnrs.fr/tutoqgis/ &#8594; https://tutoqgis.cnrs.fr/</span>
+	</div>
+	
+	<!-- menus horizontaux -->
+	<div id="nav">
+		<ul>
+			<li><a href="index-2.html">Présentation</a></li>
+			<li><a href="plan_detaille.html">Plan détaillé</a></li>
+			<li><a href="index_az.html">Index</a></li>
+			<li><a href="telechargement.html">Téléchargement</a></li>
+			<li><a href="en_savoir_plus.html">En savoir plus</a></li>
+		</ul>
+	</div>
+	
+</div>
+
+	
+	<div id="container_main_sidebar">
+
+	
+		<div class="main">
+		  <h1 class="hide_for_pdf">V. Numérisation</h1>
+			<h2>V.4  Numériser des lignes</h2>
+				<ul class="listetitres">
+					<li><a href="#V41">Création d'une couche de lignes</a></li>
+					<li><a href="#V42">Ajout d'une ligne</a>
+						<ul class="listesoustitres">
+							<li><a href="#V42a">Première ligne</a></li>
+							<li><a href="#V42b">Quelques astuces</a></li>
+						</ul>
+					</li>
+					<li><a href="#V43">Modification du tracé d'une ligne</a></li>
+				</ul>
+				<br>
+				
+			<p>Nous avons vu précédemment comment numériser des points. Comment procéder quand le but est de numériser des lignes ? Nous allons numériser des fleuves de la carte de l'île d'Oahu.</p>
+
+			
+			<h3>Création d'une couche de lignes<a class="headerlink" id="V41" href="#V41"></a></h3>
+				
+				<div class="manip">
+					<p>Reportez-vous à la <a href="05_01_creation_couche.html">partie V.1</a> pour créer une couche de ligne, en lui donnant :</p>
+					<ul>
+  					    <li>le nom <em class="data">fleuves_oahu</em>.</li>
+						<li>le type de géométrie <b>polyligne</b></li>
+						<li>un seul champ de type texte, de longueur 80, nommé <b>nom</b> (il contiendra le nom des fleuves)</li>
+					</ul>
+					<p>Vérifiez que cette couche soit bien chargée dans votre projet, ainsi que la carte <em class="data"><a href="donnees/TutoQGIS_05_Numerisation.zip">Oahu_Hawaiian_Islands_1906_wgs84.tif</a></em>.</p>
+				</div>
+			
+			<h3>Ajout d'une ligne<a class="headerlink" id="V42" href="#V42"></a></h3>
+			
+				<h4>Première ligne<a class="headerlink" id="V42a" href="#V42a"></a></h4>
+				
+    				<div class="manip">
+    					<p>Zoomez sur un fleuve, par exemple dans l'ouest de l'île, dans la région de Makaha :</p>
+    					<figure>
+    						<a href="illustrations/5_4_makaha.jpg" >
+    							<img class="noshadow" src="illustrations/5_4_makaha.jpg" alt="zoom sur Makaha" width="232">
+    						</a>
+    						<a href="illustrations/5_4_makaha_zoom.jpg" >
+    							<img class="noshadow" src="illustrations/5_4_makaha_zoom.jpg" alt="zoom sur la rivière de Makaha" width="266">
+    						</a>
+    					</figure>
+    					<p>Passez en mode édition pour votre couche de fleuves.</p>
+    					<p><img class="icone" src="illustrations/5_4_ajout_icone.jpg" alt="icône ajouter une entité linéaire">Cliquez sur l'icône <b>Ajouter une entité linéaire</b>. Attention, elle ressemble beaucoup à l'icône pour créer une nouvelle couche shapefile&nbsp;!</p>
+    					<p class="note">Vous remarquerez que cette icône varie en fonction du type de couche éditée : point, ligne ou polygone.</p>
+    					<p>Cliquez sur le début du fleuve pour créer un premier sommet, puis rajoutez d'autres points à votre ligne. Pour terminer, faites un clic-droit n'importe où.</p>
+    					<figure>
+    						<a href="illustrations/5_4_fleuve.jpg" >
+    							<img src="illustrations/5_4_fleuve.jpg" alt="fleuve numérisé" width="500">
+    						</a>
+    					</figure>
+    				</div>
+				
+				<h4>Quelques astuces<a class="headerlink" id="V42b" href="#V42b"></a></h4>
+				
+					<ul>
+					<li class="espace">Si pendant la numérisation vous avez des <b>difficultés à voir votre ligne</b> : menu Préférences &#8594; Options &#8594; rubrique Numérisation : réglez l'épaisseur de la ligne, par exemple 2, et la couleur. Pour la 
+					<a class="thumbnail_bottom" href="#thumb">couleur
+						<span>
+							<img src="illustrations/5_4_num_style_couleur.jpg" alt="choix de la couleur de numérisation" height="400" >
+						</span>
+					</a>
+					, n'oubliez pas de mettre le canal alpha, c'est-à-dire la transparence, à 255 pour éliminer toute transparence (une fois la ligne terminée, elle prend le style spécifié dans les propriétés de la couche)</li>
+					<li class="espace"><b>Supprimer le dernier point créé :</b> touche suppr ou retour arrière (backspace)</li>
+					<li class="espace"><b>Se déplacer tout en numérisant :</b> utilisez les flèches du clavier, ou bien maintenez la molette de la souris ou la touche espace enfoncée et bougez la souris</li>
+					<li class="espace"><b>Abandonner la ligne en cours :</b> terminez-la avec un clic droit, puis si les fenêtres de saisie d'attributs sont activées cliquez sur annuler, sinon utilisez ctrl + z</li>
+					</ul>
+			
+			<h3>Modification du tracé d'une ligne<a class="headerlink" id="V43" href="#V43"></a></h3>
+			
+				<p>Il est possible de modifier le tracé d'une ligne existante en déplaçant des sommets, en en rajoutant ou supprimant.</p>
+				
+				<div class="manip">
+					<p><img class="icone" src="illustrations/5_4_noeud_icone.jpg" alt="icône outil de noeud">Vérifiez que vous êtes bien en mode édition pour la couche de fleuves. Sélectionnez-la dans la table des matières, puis cliquez sur l'icône <b>Outil de nœud</b>.</p>
+					<p>Survolez une ligne existante : les sommets prennent la forme de ronds rouges.</p>
+					<figure>
+						<a href="illustrations/5_4_fleuve_noeud.jpg" >
+							<img src="illustrations/5_4_fleuve_noeud.jpg" alt="ligne avec les noeuds visibles sous forme de carrés rouges" width="500" >
+						</a>
+					</figure>
+					<p>Si vous survolez un sommet, il devient plus gros. Vous pouvez alors :</p>
+					<ul>
+						<li class="espace"><b>le déplacer</b> en cliquant une première fois sur le sommet puis en cliquant à l'emplacement de votre choix</li>
+						<li class="espace"><b>le supprimer </b> en cliquant une première fois sur le sommet puis en appuyant sur la touche suppr</li>
+						<li class="espace"><b>rajouter un sommet :</b> double-cliquez sur la ligne à l'endroit où vous voulez créer un sommet puis cliquez là où vous désirez placer ce sommet.</li>
+					</ul>
+					<p>Une fois vos modifications terminées, n'oubliez pas de <b>quitter le mode édition en enregistrant vos modifications</b>.</p>
+				</div>
+				
+				<p>Rendez-vous au chapitre suivant pour numériser des polygones !</p>
+	
+
+				<br>
+				<a class="prec" href="05_03_donnees_attrib.html">chapitre précédent</a>
+				<a class="suiv" href="05_05_polygones.html">chapitre suivant</a>
+				<br>
+				<a class="hautpage" href="#wrap">haut de page</a>					
+				
+		</div>
+		<div class="sidebar">
+			<table class="table_logos">
+    <tr>
+        <td colspan="1">
+            <a target="_blank" href="https://letg.cnrs.fr/" >
+            	<img class="logo" src="illustrations/logo_letg.png" alt="logo LETG" height="75">
+            </a>
+        </td>
+        <td colspan="1">
+            <a target="_blank" href="http://www.passages.cnrs.fr/" >
+            	<img class="logo" src="illustrations/logo_passages.png" alt="logo passages" height="33">
+            </a>
+        </td>
+        <td colspan="1">
+            <a target="_blank" href="http://ouvrir.passages.cnrs.fr/" >
+            	<img class="logo" src="illustrations/logo_ouvrir.png" alt="logo ouvrir" height="30">
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <a target="_blank" href="https://qgis.org/fr/site/" >
+            	<img class="logo" src="illustrations/logo_qgis_3_22.png" alt="logo QGIS 3.22" height="70">
+            </a>
+        </td>
+    </tr>
+</table>			<div id="h2Verti"><a href="plan_detaille.html">Plan</a></div>
+	<ol class="withroman">
+		<li><a href="01_00_prise_en_main.html">Prise en main</a>
+		<li><a href="02_00_geodesie.html">Géodésie</a></li>
+		<li><a href="03_00_recherche_ajout.html">Recherche et ajout de données</a></li>
+		<li><a href="04_00_georeferencement.html">Géoréférencement</a></li>
+		<li><a href="05_00_numerisation.html">Numérisation</a>
+			<ol class="witharabic">
+				<li><a href="05_01_creation_couche.html">Création d'une couche vide</a></li>
+				<li><a href="05_02_points.html">Ajout de points</a></li>
+				<li><a href="05_03_donnees_attrib.html">Données attributaires</a></li>
+				<li><a href="05_04_lignes.html">Numériser des lignes</a></li>
+				<li><a href="05_05_polygones.html">Numériser des polygones</a></li>
+				<li><a href="05_06_topologie.html">Quelques notions de topologie</a></li>
+			</ol>
+		</li>
+		<li><a href="06_00_requetes.html">Requêtes</a></li>
+		<li><a href="07_00_champs.html">Calcul de champs</a></li>
+		<li><a href="08_00_jointures.html">Jointures</a></li>
+		<li><a href="09_00_analyse_spatiale.html">Analyse spatiale</a></li>
+		<li><a href="10_00_carto.html">Représentation et mise en page</a></li>
+		<li><a href="11_00_automatisation.html">Automatisation de traitements</a></li>
+	</ol>		</div>
+		
+		<div id="notforprint" style="clear:both;"></div>
+	
+	</div>
+
+	<div id="footer">
+
+	<hr class="simple">
+	<a target="_blank" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.fr">
+		<img alt="Licence Creative Commons" src="illustrations/by-sa.png" height="27" >
+	</a>
+	Ce tutoriel est mis à disposition selon les termes de la <a target="_blank" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.fr">Licence Creative Commons Attribution 4.0 International</a>
+
+</div>
+</div>
+</body>
+
+<!-- Mirrored from tutoqgis.cnrs.fr/05_04_lignes.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Apr 2024 10:31:50 GMT -->
+</html>

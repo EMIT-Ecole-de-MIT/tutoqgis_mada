@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+
+<!-- Mirrored from tutoqgis.cnrs.fr/11_01_traitement_de_base.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Apr 2024 10:33:17 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Tutoriel QGIS</title>
+	<meta name="description" content="Tutoriel QGIS">
+	<meta name="author" content="Pierson Julie" >
+	<link rel="icon" type="image/x-icon" href="illustrations/icon_letg.png">
+	<link href='https://fonts.bunny.net/css?family=Open+Sans:400,400italic,600,600italic,700,700italic&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="tutoqgis.css" media="screen">
+	<!--<link rel="stylesheet" type="text/css" href="tutoqgis_print.css" media="screen">-->
+</head>
+
+<body>
+<div id="wrap">
+	<div id="menus_horiz">
+
+	<!-- titre -->
+	<div id="header">
+		<a class="grostitre" href="index-2.html">Tutoriel QGIS</a>
+		<span style="float:right">Attention, le tutoriel a déménagé ! Mettez vos marque-pages à jour :-) <br> http://ouvrir.passages.cnrs.fr/tutoqgis/ &#8594; https://tutoqgis.cnrs.fr/</span>
+	</div>
+	
+	<!-- menus horizontaux -->
+	<div id="nav">
+		<ul>
+			<li><a href="index-2.html">Présentation</a></li>
+			<li><a href="plan_detaille.html">Plan détaillé</a></li>
+			<li><a href="index_az.html">Index</a></li>
+			<li><a href="telechargement.html">Téléchargement</a></li>
+			<li><a href="en_savoir_plus.html">En savoir plus</a></li>
+		</ul>
+	</div>
+	
+</div>
+
+	
+	<div id="container_main_sidebar">
+
+		
+		<div class="main">
+		  <h1 class="hide_for_pdf">XI.  Automatisation de traitements</h1>
+			<h2>XI.1  Traitement de base pour une seule couche</h2>
+				
+				<p>Nous allons (re)voir ici une manipulation simple&nbsp;: comment <a href="09_01_vecteur.html#IX11">découper une couche par une autre</a>.</p>
+				<p>Nous verrons dans les chapitres suivants comment <b>automatiser ce traitement</b>, pour par exemple découper rapidement 10 couches par une autre.</p>
+				
+				<div class="manip">
+					<p>Lancer QGIS et ouvrir le projet <em class='data'><a href="donnees/TutoQGIS_11_Automatisation.zip">decoupe.qgz</a></em> situé dans <b>TutoQGIS_11_automatisation/projets</b>.</p>
+					<p>Ce projet contient une couche correspondant aux limites communales de la commune de Sainte-Radégonde, ainsi que 4 autres couches de lieux, routes, espaces naturels et bâtiments.</p>
+					<figure>
+							<a href="illustrations/11_01_projet.jpg" >
+								<img src="illustrations/11_01_projet.jpg" alt="Aperçu du projet decoupe.qgz" width="550">
+							</a>
+					</figure>
+					<div class="question">
+                		<input type="checkbox" id="faq-1">
+                		<p><label for="faq-1">Vérifier que toutes les couches aient bien le même SCR. Quel est ce SCR&nbsp;?</label></p>
+                		<p class="reponse">En allant dans les propriétés de chaque couche, rubrique Source (ou bien en survolant le nom de chaque couche et en lisant l'infobulle), on peut constater qu'elles sont toutes en RGF93/Lambert 93, code EPSG 2154.</p>
+                	</div>
+                	
+					<p>Pour découper la couche de routes par la commune :
+					   <a class="thumbnail_bottom" href="#thumb">Boîte à outils &#8594; Recouvrement de vecteur &#8594; Couper
+                        	<span>
+                        		<img src="illustrations/11_01_couper_menu.jpg" alt="Emplacement de l'outil Couper dans la boîte à outils" width="280" >
+                        	</span>
+                        </a> 
+					</p>
+					<figure>
+							<a href="illustrations/11_01_decouper_fenetre.jpg" >
+								<img src="illustrations/11_01_decouper_fenetre.jpg" alt="Fenêtre de l'outil Couper" width="600">
+							</a>
+					</figure>
+					<p>Une nouvelle couche temporaire est créée, qui ne contient que les portions de routes à l'intérieur de la commune.</p>
+				</div>
+				
+				<p>Comment faire maintenant pour découper les 4 couches par la commune, sans répéter 4 fois cette opération&nbsp;?</p>
+				
+				<br>
+				<a class="prec" href="11_00_automatisation.html">chapitre précédent</a>
+				<a class="suiv" href="11_02_par_lot.html">chapitre suivant</a>
+				<br>
+				<a class="hautpage" href="#wrap">haut de page</a>
+
+		</div>
+		<div class="sidebar">
+			<table class="table_logos">
+    <tr>
+        <td colspan="1">
+            <a target="_blank" href="https://letg.cnrs.fr/" >
+            	<img class="logo" src="illustrations/logo_letg.png" alt="logo LETG" height="75">
+            </a>
+        </td>
+        <td colspan="1">
+            <a target="_blank" href="http://www.passages.cnrs.fr/" >
+            	<img class="logo" src="illustrations/logo_passages.png" alt="logo passages" height="33">
+            </a>
+        </td>
+        <td colspan="1">
+            <a target="_blank" href="http://ouvrir.passages.cnrs.fr/" >
+            	<img class="logo" src="illustrations/logo_ouvrir.png" alt="logo ouvrir" height="30">
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <a target="_blank" href="https://qgis.org/fr/site/" >
+            	<img class="logo" src="illustrations/logo_qgis_3_22.png" alt="logo QGIS 3.22" height="70">
+            </a>
+        </td>
+    </tr>
+</table>			<div id="h2Verti"><a href="plan_detaille.html">Plan</a></div>
+	<ol class="withroman">
+		<li><a href="01_00_prise_en_main.html">Prise en main</a>
+		<li><a href="02_00_geodesie.html">Géodésie</a></li>
+		<li><a href="03_00_recherche_ajout.html">Recherche et ajout de données</a></li>
+		<li><a href="04_00_georeferencement.html">Géoréférencement</a></li>
+		<li><a href="05_00_numerisation.html">Numérisation</a></li>
+		<li><a href="06_00_requetes.html">Requêtes</a></li>
+		<li><a href="07_00_champs.html">Calcul de champs</a></li>
+		<li><a href="08_00_jointures.html">Jointures</a></li>
+		<li><a href="09_00_analyse_spatiale.html">Analyse spatiale</a></li>
+		<li><a href="10_00_carto.html">Représentation et mise en page</a></li>
+		<li><a href="11_00_automatisation.html">Automatisation de traitements</a>
+			<ol class="witharabic">
+				<li><a href="11_01_traitement_de_base.html">Traitement de base</a></li>
+				<li><a href="11_02_par_lot.html">Exécution d'un outil par lot</a></li>
+				<li><a href="11_03_modeleur.html">Construire et utiliser un modèle</a></li>
+				<li><a href="11_04_python.html">Comprendre et lancer un script Python</a></li>
+			</ol>
+		</li>
+	</ol>		</div>
+		
+		<div id="notforprint" style="clear:both;"></div>
+		
+	</div>
+
+	<div id="footer">
+
+	<hr class="simple">
+	<a target="_blank" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.fr">
+		<img alt="Licence Creative Commons" src="illustrations/by-sa.png" height="27" >
+	</a>
+	Ce tutoriel est mis à disposition selon les termes de la <a target="_blank" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.fr">Licence Creative Commons Attribution 4.0 International</a>
+
+</div>
+</div>
+</body>
+
+<!-- Mirrored from tutoqgis.cnrs.fr/11_01_traitement_de_base.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Apr 2024 10:33:18 GMT -->
+</html>
