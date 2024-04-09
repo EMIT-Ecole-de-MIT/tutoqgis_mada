@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+
+<!-- Mirrored from tutoqgis.cnrs.fr/04_02_preliminaires.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Apr 2024 10:31:25 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Tutoriel QGIS</title>
+	<meta name="description" content="Tutoriel QGIS">
+	<meta name="author" content="Pierson Julie" >
+	<link rel="icon" type="image/x-icon" href="illustrations/icon_letg.png">
+	<link href='https://fonts.bunny.net/css?family=Open+Sans:400,400italic,600,600italic,700,700italic&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="tutoqgis.css" media="screen">
+	<!--<link rel="stylesheet" type="text/css" href="tutoqgis_print.css" media="screen">-->
+</head>
+
+<body>
+<div id="wrap">
+	<div id="menus_horiz">
+
+	<!-- titre -->
+	<div id="header">
+		<a class="grostitre" href="index-2.html">Tutoriel QGIS</a>
+		<span style="float:right">Attention, le tutoriel a déménagé ! Mettez vos marque-pages à jour :-) <br> http://ouvrir.passages.cnrs.fr/tutoqgis/ &#8594; https://tutoqgis.cnrs.fr/</span>
+	</div>
+	
+	<!-- menus horizontaux -->
+	<div id="nav">
+		<ul>
+			<li><a href="index-2.html">Présentation</a></li>
+			<li><a href="plan_detaille.html">Plan détaillé</a></li>
+			<li><a href="index_az.html">Index</a></li>
+			<li><a href="telechargement.html">Téléchargement</a></li>
+			<li><a href="en_savoir_plus.html">En savoir plus</a></li>
+		</ul>
+	</div>
+	
+</div>
+
+	
+	<div id="container_main_sidebar">
+
+	
+		<div class="main">
+		  <h1 class="hide_for_pdf">IV.  Géoréférencement</h1>
+			<h2>IV.2  Géoréférencement : les préliminaires</h2>
+				<ul class="listetitres">
+					<li><a href="#IV21">Objectif</a></li>
+					<li><a href="#IV22">Découverte de l'image à caler</a></li>
+				</ul>
+				<br>
+				
+			<h3>Objectif<a class="headerlink" id="IV21" href="#IV21"></a></h3>
+	
+    			<p>Notre but sera ici de caler une carte de l'île d'Oahu (Hawaii) de 1902 (source : <a class="ext" target="_blank" href="../commons.wikimedia.org/wiki/File_1902_Land_Office_Map_of_the_Island_of_Oahu%2c_Hawaii_(_Honolulu_)_-_Geographicus_-_OhauHawaii-lo-1902.jpg">Wikimedia</a>).</p>
+    			<figure>
+    				<a href="illustrations/4_2_carte_oahu.jpg" >
+    					<img src="illustrations/4_2_carte_oahu.jpg" alt="carte à caler de l'île d'Oahu" width="600">
+    				</a>
+    			</figure>
+    			<p>Une fois cette carte calée, vous pourrez la superposer à d'autres données dans QGIS.</p>
+    			<p>La première étape consiste à prendre connaissance de cette carte, et à vérifier que le module de géoréférencement de QGIS soit activé.</p>
+			
+			<h3>Découverte de l'image à caler<a class="headerlink" id="IV22" href="#IV22"></a></h3>			
+			
+				<p>Où se situe l'île d'Oahu? Rendez-vous par exemple sur Wikipedia pour le savoir : <a class="ext" target="_blank" href="http://fr.wikipedia.org/wiki/Oahu" >http://fr.wikipedia.org/wiki/Oahu</a>.</p>
+				<div class="question">
+					<input type="checkbox" id="faq-1">
+					<p><label for="faq-1">Quelles sont les coordonnées de l'île d'Oahu&nbsp;? Dans quel SCR sont mesurées ces coordonnées&nbsp;?</label></p>
+					<p class="reponse">L'île est située approximativement aux coordonnées 21° 28' Nord et 157° 59' Ouest (SCR WGS84).</p>
+				</div>
+				
+				<p>A partir de l'explorateur de fichiers de votre ordinateur, ouvrez l'image <em class="data"><a href="donnees/TutoQGIS_04_Georef.zip">Oahu_Hawaiian_Islands_1906.jpg</a></em> située dans le dossier <b>TutoQGIS_04_Georef/donnees</b>.</p>
+				<div class="question">
+					<input type="checkbox" id="faq-2">
+					<p><label for="faq-2">Pouvez-vous dire dans quel système sont mesurées les coordonnées de cette carte&nbsp;?</label></p>
+					<p class="reponse">Aucune mention d'un SCR n'est faite sur cette carte. Nous pouvons néanmoins être sûr qu'il s'agit d'un système géographique (non projeté) puisque les coordonnées sont exprimées en degrés.</p>
+					<p class="reponse">Connaître quel système a été utilisé ici nécessiterait des recherches, en se basant sur la date de la carte et la zone couverte. Nous allons supposer ici, pour les besoins de l'exercice, que les coordonnées sont en WGS84 (ce qui n'est évidemment pas le cas, ce système datant de 1984). Nous vérifierons que ce choix nous donne une précision acceptable.</p>
+				</div>
+				
+				<br>
+				<a class="prec" href="04_01_principe.html">chapitre précédent</a>
+				<a class="suiv" href="04_03_calage_carroyage.html">chapitre suivant</a>
+				<br>
+				<a class="hautpage" href="#wrap">haut de page</a>				
+				
+		</div>
+		<div class="sidebar">
+			<table class="table_logos">
+    <tr>
+        <td colspan="1">
+            <a target="_blank" href="https://letg.cnrs.fr/" >
+            	<img class="logo" src="illustrations/logo_letg.png" alt="logo LETG" height="75">
+            </a>
+        </td>
+        <td colspan="1">
+            <a target="_blank" href="http://www.passages.cnrs.fr/" >
+            	<img class="logo" src="illustrations/logo_passages.png" alt="logo passages" height="33">
+            </a>
+        </td>
+        <td colspan="1">
+            <a target="_blank" href="http://ouvrir.passages.cnrs.fr/" >
+            	<img class="logo" src="illustrations/logo_ouvrir.png" alt="logo ouvrir" height="30">
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <a target="_blank" href="https://qgis.org/fr/site/" >
+            	<img class="logo" src="illustrations/logo_qgis_3_22.png" alt="logo QGIS 3.22" height="70">
+            </a>
+        </td>
+    </tr>
+</table>			<div id="h2Verti"><a href="plan_detaille.html">Plan</a></div>
+	<ol class="withroman">
+		<li><a href="01_00_prise_en_main.html">Prise en main</a>
+		<li><a href="02_00_geodesie.html">Géodésie</a></li>
+		<li><a href="03_00_recherche_ajout.html">Recherche et ajout de données</a></li>
+		<li><a href="04_00_georeferencement.html">Géoréférencement</a>
+			<ol class="witharabic">
+				<li><a href="04_01_principe.html">Principe</a></li>
+				<li><a href="04_02_preliminaires.html">Préliminaires</a></li>
+				<li><a href="04_03_calage_carroyage.html">Avec un carroyage</a></li>
+				<li><a href="04_04_parametrage.html">Paramétrage du géoréférenceur</a></li>
+				<li><a href="04_05_lancement.html">Lancer le géoréférencement</a></li>
+				<li><a href="04_06_calage_autre_couche.html">Avec une couche de référence</a></li>
+			</ol>
+		</li>
+		<li><a href="05_00_numerisation.html">Numérisation</a></li>
+		<li><a href="06_00_requetes.html">Requêtes</a></li>
+		<li><a href="07_00_champs.html">Calcul de champs</a></li>
+		<li><a href="08_00_jointures.html">Jointures</a></li>
+		<li><a href="09_00_analyse_spatiale.html">Analyse spatiale</a></li>
+		<li><a href="10_00_carto.html">Représentation et mise en page</a></li>
+		<li><a href="11_00_automatisation.html">Automatisation de traitements</a></li>
+	</ol>		</div>
+		
+		<div id="notforprint" style="clear:both;"></div>
+	
+	</div>
+
+	<div id="footer">
+
+	<hr class="simple">
+	<a target="_blank" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.fr">
+		<img alt="Licence Creative Commons" src="illustrations/by-sa.png" height="27" >
+	</a>
+	Ce tutoriel est mis à disposition selon les termes de la <a target="_blank" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.fr">Licence Creative Commons Attribution 4.0 International</a>
+
+</div>
+</div>
+</body>
+
+<!-- Mirrored from tutoqgis.cnrs.fr/04_02_preliminaires.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Apr 2024 10:31:25 GMT -->
+</html>
