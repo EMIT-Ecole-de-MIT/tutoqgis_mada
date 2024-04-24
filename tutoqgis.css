@@ -1,17 +1,23 @@
 /* colour reference chart 
-comment     colour      desc
-link        #28A6B7     link colour
-bgm         #F0F4F4     background manip colour
-hov         #1D3437     hover colour
-
+comment       colour      desc
+maincolor       #00A041     main color
+secondcolor     #E7352F     secondary color
+thirdcolor      #008836     third color
+maincolor-light #F0FFF6     main color light
+maincolor-med   #B9FFC5     main color medium
+text            #323232     text
+text-light      #646464     text light
+bg              #E6E6E6     background
+bg-light        #F7F7F7     light background
+pb              #FF00DB     when something goes wrong
 */
 
 
 	html {
 		margin:0;
 		padding:0;
-		color:#323232;
-		background:#E6E6E6;	/* fond gris clair */
+		color: /*text*/ #323232;
+		background: /*bg*/ #E6E6E6;	/* fond gris clair */
 		font-family:"Open Sans", helvetica, arial, verdana;
 		font-size: 0.9em;
 		text-align: justify;
@@ -26,15 +32,15 @@ hov         #1D3437     hover colour
 		width:1000px;
 		position: relative;
 		margin:0 auto;
-		box-shadow: 4px 4px 10px #D4D4D4;
-  		-webkit-box-shadow: 4px 4px 10px #D4D4D4;
-		box-shadow: 4px 4px 10px #D4D4D4;
+		box-shadow: 4px 4px 10px lightgray;
+  		-webkit-box-shadow: 4px 4px 10px lightgray;
+		box-shadow: 4px 4px 10px lightgray;
 	}
 	#container_main_sidebar {	/* la zone pour les 2 colonnes main et sidebar; cette zone sert à faire en sorte que ces 2 colonnes soient toujours de même hauteur */
 		width:1000px;
 		position: relative;
 		margin:0 auto;
-		background:#f7f7f7;	/* fond gris très clair pour le plan à droite */
+		background: /*bg-light*/ #F7F7F7;	/* fond gris très clair pour le plan à droite */
 	}
 	.main {	/* la zone de texte */
 	  min-height: 600px; /*nécessaire pour les pages avec peu de texte, pour que main ne soit pas + petite que sidebar */
@@ -50,7 +56,7 @@ hov         #1D3437     hover colour
 	/* les menus horizontaux */
 	#menus_horiz {	/* le contenant global des menus horizontaux */
 		padding:0px 0px;
-		background:#FFFFFF url(illustrations/bandeau.jpg);
+		background:#FFFFFF url(illustrations/bandeau_madavert.png);
 	}
 	/* le div pour les logos à n'afficher qu'à l'impression */
 	#logos_print {
@@ -62,7 +68,7 @@ hov         #1D3437     hover colour
 	}
 	#nav {	/* les menus eux-mêmes */
 		padding:2px 0px;
-		background: rgba(25,25,25,0.5);
+		background: rgba(231,53,47,0.75);
 	}
 	#nav ul {
 		margin:0;
@@ -75,16 +81,16 @@ hov         #1D3437     hover colour
 	#nav li {
 		display:inline;
 		margin:0;
-		padding:8px;
+		padding:10px;
 	}
 	#nav li a {	/* pour les liens du menu horizontal */
-		font-size: 1.1em;
-        color: #FFFFFF;
-        text-decoration: none;
+		font-size: 1.2em;
+    color: #FFFFFF;
+    text-decoration: none;
 	}
 	#nav li:hover {	/* pour les liens du menu horizontal */
-		color: #191919;
-		background-color: #EFEFEF;
+		color: /*secondcolor*/ #E7352F;
+		background-color: #FFFFFF;
 	}
 	#nav li:hover a {	/* pour les liens du menu horizontal */
 		color: inherit;
@@ -99,14 +105,14 @@ hov         #1D3437     hover colour
 		padding-left:10px;
 		padding-right:10px;
 		padding-bottom: 0;
-		background: #f7f7f7;
+		background: /*bg-light*/ #F7F7F7;
 	}
 	#sidebar a {	/* pour les liens du menu vertical */
-      color:#2DAB0B;
+      color: /*maincolor*/ #00A041;
       text-decoration: none;		
 	}
 	#sidebar a:hover {	/* pour les liens du menu vertical */
-      color:#FF7D00;
+      color: /*secondcolor*/ #E7352F;
 	}
 
 	/* pied de page */
@@ -120,10 +126,10 @@ hov         #1D3437     hover colour
 		margin:0;
    	}
 	#footer a {	/* pour les liens du pied de page */
-      color: #646464;
+      color: /*text-light*/ #646464;
    	}
    #footer a:hover {	/* pour les liens du pied de page */
-      color: #000000;
+      color: black;
    	}
 	* html #footer {
 		height:1px;
@@ -132,7 +138,7 @@ hov         #1D3437     hover colour
 	/* images et figures */
 	img {	/* par défaut, avec une ombre */
 		padding-left: 0px;
-		color:#FF00DB;	/* quand une image est prévue mais ne s'affiche pas, affiche le texte en rose */
+		color: /*pb*/ #FF00DB;	/* quand une image est prévue mais ne s'affiche pas, affiche le texte en rose */
 		border: none;
 		box-shadow: 2px 2px 4px #ccc;
    	    -webkit-box-shadow: 2px 2px 4px #ccc;
@@ -141,7 +147,7 @@ hov         #1D3437     hover colour
 	img.droite {	/* image à droite, avec texte autour, et pas d'ombre */
 		float: right;
 		padding-left: 10px;
-		color:#FF00DB;	/* quand une image est prévue mais ne s'affiche pas, affiche le texte en rose */
+		color: /*pb*/ #FF00DB;	/* quand une image est prévue mais ne s'affiche pas, affiche le texte en rose */
 		border: none;
 		box-shadow: none;
 		-webkit-box-shadow: none;
@@ -150,7 +156,7 @@ hov         #1D3437     hover colour
    img.gauche {	/* image à droite, avec texte autour, et pas d'ombre */
 		float: left;
 		padding-right: 10px;
-		color:#FF00DB;	/* quand une image est prévue mais ne s'affiche pas, affiche le texte en rose */
+		color: /*pb*/ #FF00DB;	/* quand une image est prévue mais ne s'affiche pas, affiche le texte en rose */
 		border: none;
 		box-shadow: none;
 		-webkit-box-shadow: none;
@@ -158,7 +164,7 @@ hov         #1D3437     hover colour
    }
 	img.noshadow {	/* sans ombre */
 		padding-left: 0px;
-		color:#FF00DB;	/* quand une image est prévue mais ne s'affiche pas, affiche le texte en rose */
+		color: /*pb*/ #FF00DB;	/* quand une image est prévue mais ne s'affiche pas, affiche le texte en rose */
 		border: none;
 		box-shadow: none;
 		-webkit-box-shadow: none;
@@ -169,7 +175,7 @@ hov         #1D3437     hover colour
 		padding-bottom: 0px;
 		padding-left: 0;
 		padding-right: 0px;
-		color:#FF00DB;	/* quand une image est prévue mais ne s'affiche pas, affiche le texte en rose */
+		color: /*pb*/ #FF00DB;	/* quand une image est prévue mais ne s'affiche pas, affiche le texte en rose */
 		border: none;
 		box-shadow: none;
 		-webkit-box-shadow: none;
@@ -227,13 +233,13 @@ hov         #1D3437     hover colour
 	/* Pour afficher une image quand on passe la souris sur un texte (capture d'écran) */
 	/* quand on veut que l'image s'affiche au-dessous du texte */
 	.thumbnail_bottom{
-		color: /*hov*/#1D3437;
+		color: /*thirdcolor*/ #008836;
 		border-bottom: 1px dotted;
 		position: relative;
 		z-index: 0;
 	}
 	.thumbnail_bottom:hover{
-	    color: /*hov*/#1D3437;
+	    color: /*thirdcolor*/ #008836;
 		background-color: transparent;
 		z-index: 50;
 	}
@@ -259,13 +265,13 @@ hov         #1D3437     hover colour
 	}
 	/* quand on veut que l'image s'affiche au-dessus du texte (bas de page) */
 	.thumbnail_top{
-		color: /*hov*/#1D3437;
+		color: /*thirdcolor*/ #008836;
 		border-bottom: 1px dotted;
 		position: relative;
 		z-index: 0;
 	}
 	.thumbnail_top:hover{
-	    color: /*hov*/#1D3437;
+	    color: /*thirdcolor*/ #008836;
 		background-color: transparent;
 		z-index: 50;
 	}
@@ -302,7 +308,7 @@ hov         #1D3437     hover colour
 	}
 	th{
 		color: white;
-	    background-color: #28A6B7;
+	    background-color: /*maincolor*/ #00A041;
 	    padding-top: 3px;
 	    padding-bottom: 3px;
 	    padding-left: 10px;
@@ -310,7 +316,7 @@ hov         #1D3437     hover colour
 	}
 	th.clair{
 		color: white;
-	    background-color: #59CFDF;
+	    background-color: /*maincolor-light*/ #F0FFF6;
 	    padding-top: 3px;
 	    padding-bottom: 3px;
 	    padding-left: 10px;
@@ -319,7 +325,7 @@ hov         #1D3437     hover colour
 	}
 	th.centre{
 		color: white;
-	    background-color: #28A6B7;
+	    background-color: /*maincolor*/ #00A041;
 		padding-top: 3px;
 	    padding-bottom: 3px;
 	    padding-left: 10px;
@@ -340,7 +346,7 @@ hov         #1D3437     hover colour
 	   text-align: center;
 	}
 	td.centreclair{
-		background-color: #EAF5F6;
+		background-color: /*maincolor-light*/ #F0FFF6;
 		padding-top: 3px;
 	    padding-bottom: 3px;
 	    padding-left: 10px;
@@ -348,7 +354,7 @@ hov         #1D3437     hover colour
 	    text-align: center;
 	}
 	td.centreclairalt{
-		background-color: #B2DFE4;
+		background-color: /*maincolor-med*/ #B9FFC5;
 		padding-top: 3px;
 	    padding-bottom: 3px;
 	    padding-left: 10px;
@@ -357,15 +363,15 @@ hov         #1D3437     hover colour
 	}
 	tr{
 		color: black;
-		background-color: #DFF4F6;
+		background-color: /*maincolor-light*/ #F0FFF6;
 	}
 	tr.alt{
 		color: black;
-		background-color: #9CDDE4;
+		background-color: /*maincolor-med*/ #B9FFC5;
 	}
 	tr.white{
 	    color: black;
-		background-color: #f4fbff;
+		background-color: /*maincolor-light*/ #F0FFF6;
 	}
 	
 	/* pour les logos dans la partie droite */
@@ -453,31 +459,32 @@ hov         #1D3437     hover colour
 	}
 	
 	/* différents styles d'hyperliens */
-	a {		/* les hyperliens s'affichent en bleu */
-		color: /*link*/#28A6B7;
+	a {
+		color: /*maincolor*/ #00A041;
     	text-decoration: none;
 	}
-	a:hover {	/* et en orange quand on passe la souris au-dessus */
-		color:#FF7D00;
+	a:hover {	
+		color: /*secondcolor*/ #E7352F;
 	}
 	a.grostitre{
-		color: white;
+		color: /*secondcolor*/ #E7352F;
+		font-weight: bold !important;
 		margin:0;
 	    font-weight:normal;
 	    font-size: 2em;
 	}
 	a.titre:hover {	/* sauf quand c'est un titre */
-		color:#1F9DAA;
+		color: /*maincolor*/ #00A041;
 	}
 	a.noir:hover {
 		color: red;
 	}
 	a.ext {	/* les hyperliens externes en gris */
-		color:#646464;
+		color: /*text-light*/ #646464;
 		border-bottom: 1px dotted;
 	}
 	a.ext:hover {
-		color: #FF7D00;
+		color: /*secondcolor*/ #E7352F;
 	}
 	a.ext:after {  /* une icône différente pour les liens externes */
   		content: "\0000a0[\2197]";
@@ -521,7 +528,7 @@ hov         #1D3437     hover colour
 
 	/* texte mis en évidence (donnees, numeros...) */
 	em.data { 
-		color: #18656F;
+		color: /*thirdcolor*/ #008836;
 		font-weight: bold;
 		font-style: normal;
 		 }
@@ -539,24 +546,15 @@ hov         #1D3437     hover colour
 		padding-bottom: 1px;
 		border-left: 6px;
 		border-left-style: solid;
-		border-left-color: #1F9DAA;
-		background-color: /*bgm*/#F0F4F4;
+		border-left-color: /*maincolor*/ #00A041;
+		background-color: /*maincolor-light*/ #F0FFF6;
 	}
 	p.note{
 		font-size: 0.9em;
 		font-style: italic;
 	}
 	p.attention{
-		color:#18656F;
-		font-weight: bold;
-	}
-	p.answer {
-		font-style: italic;
-		background-color: #FFDBDE;
-	}
-	p.bonus_question {
-		font-size: 1.1em;
-		color: #A81111;
+		color: /*thirdcolor*/ #008836;
 		font-weight: bold;
 	}
 	.code {
@@ -564,7 +562,7 @@ hov         #1D3437     hover colour
 		white-space: pre-wrap;
 	}
 	p.keskonfai{
-	    color: #FF00DB;
+	    color:  /*pb*/ #FF00DB;
 	    font-style: italic;
 	}
 
@@ -577,12 +575,12 @@ hov         #1D3437     hover colour
 		padding-bottom: 1px;
 		border-left: 6px;
 		border-left-style: solid;
-		border-left-color: /*link*/#28A6B7;
-		background-color: /*bgm*/#F0F4F4;
+		border-left-color: /*maincolor*/ #00A041;
+		background-color: /*maincolor-light*/ #F0FFF6;
 	}
     div.theorie:before{
 	    content: "Point théorique \A";
-	    color: #737373;
+	    color: /*text-light*/ #646464;
 	    font-weight: bold;
 	    font-style: italic;
 	    white-space: pre;
@@ -590,15 +588,8 @@ hov         #1D3437     hover colour
 	    /*bottom: 20px;*/
 	}
 	div.theorie{
-	    background-color:#e7e7e7;
+	    background-color: /*bg*/ #E6E6E6;
 	    padding: 10px;
-	}
-	div.bonus {
-		background-color: #FFDDDD;
-		padding-left: 10px;
-		padding-right: 5px;
-		padding-top: 1px;
-		padding-bottom: 1px;
 	}
 	
 	/* un style de barre horizontale */
@@ -626,30 +617,30 @@ hov         #1D3437     hover colour
 	/* les titres */
 	h1 {
 		font-variant:small-caps;
-		color: /*link*/#28A6B7;
+		color: /*maincolor*/ #00A041;
 		font-weight:bold;
 		font-size:1.5em;
 		margin:1em 0 1em;
 	}
 	h2 {
 		font-variant:small-caps;
-		color: /*link*/#28A6B7;
+		color: /*maincolor*/ #00A041;
 		font-weight:bold;
 		font-size:1.5em;
 		margin:1em 0 1em;
 	}
 	h3 {
-		color: /*link*/#28A6B7;
+		color: /*maincolor*/ #00A041;
 		font-weight:bold;
 		font-size:1.3em;
 		margin:0 0 1em;
 		padding-top: 40px;
 		border-bottom: 2px;
 		border-bottom-style:solid;
-		border-bottom-color:/*link*/#28A6B7;
+		border-bottom-color: /*maincolor*/ #00A041;
 	}
 	h4 {
-		color: /*link*/#28A6B7;
+		color: /*maincolor*/ #00A041;
 		font-style:italic;
 		font-weight: normal;
 		font-size:1.2em;
@@ -733,15 +724,15 @@ hov         #1D3437     hover colour
         /* on n'affiche pas les images qui s'affichent normalement en survolant le texte */
         .thumbnail_bottom span{display: none;}
         .thumbnail_top span{display: none;}
-        .thumbnail_bottom{color: #323232; border-bottom: none; pointer-events: none; cursor: default; font-weight: bold;}
-        .thumbnail_top{color: #323232; border-bottom: none; pointer-events: none; cursor: default; font-weight: bold;}
+        .thumbnail_bottom{color: /text*/ #323232; border-bottom: none; pointer-events: none; cursor: default; font-weight: bold;}
+        .thumbnail_top{color: /text*/ #323232; border-bottom: none; pointer-events: none; cursor: default; font-weight: bold;}
         /* pour couper les mots trop longs */
         body {overflow-wrap: break-word; word-wrap: break-word; -ms-hyphens: auto; -moz-hyphens: auto; hyphens: auto;}
         /* pour le menu horizontal */
         #nav li {display: block; text-align: center; font-size: 6vw;}
         #nav ul li, #nav ul li a {width: 100%;}
         #nav li:hover {display: block;}
-        #wrapdanswrap { background:#FFFFFF url(illustrations/bandeau.jpg); background-size: cover;}
+        #wrapdanswrap { background:#FFFFFF url(illustrations/bandeau_madavert.png); background-size: cover;}
         /* taille de police pour le titre */
         a.grostitre {font-size: 8vw;}
         /* taille de police pour le plan détaillé */
@@ -768,8 +759,8 @@ hov         #1D3437     hover colour
         /* on n'affiche pas les images qui s'affichent normalement en survolant le texte */
         .thumbnail_bottom span{display: none;}
         .thumbnail_top span{display: none;}
-        .thumbnail_bottom{color: #323232; border-bottom: none; pointer-events: none; cursor: default; font-weight: bold;}
-        .thumbnail_top{color: #323232; border-bottom: none; pointer-events: none; cursor: default; font-weight: bold;}
+        .thumbnail_bottom{color: /text*/ #323232; border-bottom: none; pointer-events: none; cursor: default; font-weight: bold;}
+        .thumbnail_top{color: /text*/ #323232; border-bottom: none; pointer-events: none; cursor: default; font-weight: bold;}
         /* pour couper les mots trop longs */
         body {overflow-wrap: break-word; word-wrap: break-word; -ms-hyphens: auto; -moz-hyphens: auto; hyphens: auto;}
         /* pour le menu horizontal */
