@@ -291,9 +291,31 @@
 				<p class="note">Il est à noter que la projection Lambert 93 a été conçue pour être utilisée uniquement avec le système RGF93.</p>
 				<p>Chaque ensemble système de coordonnées et projection s'il y en a une, ou simplement système de coordonnées, est référencé par un code, généralement défini par l'EPSG.</p>
 				<p class="attention">Pour simplifier, dans le reste de ce tutoriel, le système de coordonnées et sa projection associée s'il y en a une seront nommés SCR (Système de Coordonnées de Référence) suivant la terminologie utilisée par QGIS.</p>
-				
+
+			<h3>Projections utilisées à Madagascar<a class="headerlink" id="II24" href="#II24"></a></h3>				
+			<h4>En cours de validité<a class="headerlink" id="II24a" href="#II24a"></a></h4>
+            
+            <p>Les systèmes de référence de coordonnées légaux à Madagascar sont définis par la <a href="https://cnlegis.gov.mg/page_lien/2015-051">Loi n°2015-051 du 03 Février 2016 portant orientation de l’Aménagement du Territoire (LOAT)</a> et plus particulièrement par le décret <a href="https://cnlegis.gov.mg/uploads/D2021-1112-VF.pdf">2021-1112</a></p>
+            <p>Pour Madagascar, le Système national de référence de coordonnées planimétriques est :</p>
+            <ul>
+            <li>Système géodésique : le Réseau Géodésique de Madagascar 1965 (RGM65)</li>
+            <li>Système de projection cartographique : Représentation plane conforme Laborde Madagasikara. Cela correspond à la projection appelée <i>Tananarive (Paris) / Laborde Grid</i> dans QGIS, sont code EPSG est <code>ESPG:29701</code>. Son usage est recommandée pour les travaux topographiques et la cartographie à grande échelle.</li>
+            </ul>
+            <p>D'autres systèmes de référence de coordonnées sont utilisés à Madagascar:</p>
+            <ul>
+            <li>la projection <i>Tananarive (Paris) / Laborde Grid approximation</i> (code <code>ESPG:29702</code>) est utilisée pour la cartographie à moyenne et petite échelle. Il s'agit d'une projection de type <i>Oblique Mercator</i> à la différence de l'<code>ESPG:29701</code> qui est une projection de type <i>Laborde</i>.</li>
+            <li>le WGS84 (<code>EPSG:4326</code>) pour les données issues de levés GPS</li>
+            <li>La  <i>Tananarive / UTM zone 38S</i> (Code <code>EPSG:29738</code>) est une projection de type Mercator.</li>
+            <li>La  <i>Tananarive / Laborde Grid</i> (Code <code>EPSG:8441</code>) est similaire à <code>EPSG:29701</code> mais son méridien d'origine est le méridien de Greenwich.</li>
+            </ul>
+            
+            <h4>Obsolètes<a class="headerlink" id="II24b" href="#II24b"></a></h4>
+            
+            <p>La projection <i>Tananarive (Paris) / Laborde Grid</i> (<code>ESPG:29700</code>) a été dépréciée en 2020. De nombreux jeux de données sont encore dans ce système de référence de coordonnées. Il conviendra de les transformer vers l'<code>ESPG:29701</code></p>
+            
+            <p>La projection <i>Tananarive_1925_Laborde_Grid </i> (<code>ESRI:102590</code>) a été dépréciée en 2020, il est préférable de transformer les données vers <code>ESPG:8441</code> ou  <code>ESPG:29701</code></p>
 			
-			<h3>Quelques ressources internet<a class="headerlink" id="II24" href="#II24"></a></h3>
+            <h3>Quelques ressources internet<a class="headerlink" id="II25" href="#II25"></a></h3>
 			
 				<ul>
 					<li>Comprendre le principe des projections : <a class="ext" target="_blank" href="https://www.onf.ca/film/carte_impossible">la carte impossible</a></li>
